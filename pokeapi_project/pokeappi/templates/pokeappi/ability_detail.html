@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEAPPI</title>
+    <style>
+        .centrado {
+            text-align: center;
+            padding: 8px;
+            font-family: Arial;
+            background-color: black;
+        }
+
+        div {
+            width: 50%;
+            padding: 8px;
+            margin: auto;
+        }
+
+        center {
+            margin: 16px 0;
+        }
+        .cuerpo {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="centrado">
+    <div>
+        <img src="https://i.imgur.com/AzZqapB.png" />
+    </div>
+    <div class="cuerpo">
+        <h2>{{ ability_data.name }}</h2>
+        <p>Effect: {{ ability_data.effect_entries.0.effect }}</p>    
+</div>
+</body>
+
+</html>

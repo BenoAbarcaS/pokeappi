@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEAPPI</title>
+    <style>
+        .centrado {
+            text-align: center;
+            padding: 8px;
+            font-family: Arial;
+            background-color: black;
+        }
+
+        div {
+            width: 50%;
+            padding: 8px;
+            margin: auto;
+        }
+
+        center {
+            margin: 16px 0;
+        }
+        .cuerpo {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="centrado">
+    <div>
+        <img src="https://i.imgur.com/AzZqapB.png" />
+    </div>
+    <div class="cuerpo">
+        <h1>{{ pokemon_data.name }}</h1>
+        <img src="{{ pokemon_data.sprites.front_default }}">
+        <p>ID: {{ pokemon_data.id }}</p>
+        <p>Altura: {{ pokemon_data.height }}</p>
+        <p>Peso: {{ pokemon_data.weight }}</p>
+        <h3>Habilidades:</h3>
+        <ul>
+            {% for ability in pokemon_data.abilities %}
+                <li><a href="{% url 'ability_detail' ability.ability.name %}">{{ ability.ability.name }}</a></li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+</body>
+
+</html>
